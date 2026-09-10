@@ -15,7 +15,7 @@ function cleanName(value) {
 }
 
 function validScore(value) {
-  return Number.isInteger(value) && value >= 0 && value <= 50000 && value % 100 === 0;
+  return Number.isInteger(value) && value >= 0 && value <= 50000 && value % 108 === 0;
 }
 
 function sameOrigin(request, url) {
