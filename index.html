@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="SAT SLAP — ตะปบ FIAT Sheep เก็บ sats กับ HODL White">
+  <title>SAT SLAP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="game-wrap" aria-label="SAT SLAP game">
+      <header class="topbar">
+        <div class="brand-block">
+          <strong id="gameTitle">SAT SLAP</strong>
+          <span id="gameSubtitle">HODL White vs. FIAT Sheep</span>
+        </div>
+        <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false" aria-label="ปิดเสียง">🔊 เสียง</button>
+      </header>
+
+      <div id="stage" class="stage">
+        <img class="stage-bg" src="assets/images/citadel-bg.webp" alt="ภาพกราฟิกสนามหญ้าหน้า Citadel Coffee">
+
+        <div class="hud" aria-live="polite">
+          <div class="hud-chip"><span class="hud-label">PLAYER</span><strong id="hudName">—</strong></div>
+          <div class="hud-chip hud-score"><span class="hud-label">STACKED</span><strong><span id="hudScore">0</span> sats</strong></div>
+          <div class="hud-chip hud-time"><span class="hud-label">TIME</span><strong id="hudTime">01:00</strong></div>
+        </div>
+
+        <div id="board" class="board" aria-label="สนามเกม 9 หลุม">
+          <button class="hole" type="button" data-index="0" aria-label="หลุมที่ 1"><img class="sheep" alt=""><img class="hole-base" src="assets/images/hole.webp" alt=""></button>
+          <button class="hole" type="button" data-index="1" aria-label="หลุมที่ 2"><img class="sheep" alt=""><img class="hole-base" src="assets/images/hole.webp" alt=""></button>
+          <button class="hole" type="button" data-index="2" aria-label="หลุมที่ 3"><img class="sheep" alt=""><img class="hole-base" src="assets/images/hole.webp" alt=""></button>
+          <button class="hole" type="button" data-index="3" aria-label="หลุมที่ 4"><img class="sheep" alt=""><img class="hole-base" src="assets/images/hole.webp" alt=""></button>
+          <button class="hole" type="button" data-index="4" aria-label="หลุมที่ 5"><img class="sheep" alt=""><img class="hole-base" src="assets/images/hole.webp" alt=""></button>
+          <button class="hole" type="button" data-index="5" aria-label="หลุมที่ 6"><img class="sheep" alt=""><img class="hole-base" src="assets/images/hole.webp" alt=""></button>
+          <button class="hole" type="button" data-index="6" aria-label="หลุมที่ 7"><img class="sheep" alt=""><img class="hole-base" src="assets/images/hole.webp" alt=""></button>
+          <button class="hole" type="button" data-index="7" aria-label="หลุมที่ 8"><img class="sheep" alt=""><img class="hole-base" src="assets/images/hole.webp" alt=""></button>
+          <button class="hole" type="button" data-index="8" aria-label="หลุมที่ 9"><img class="sheep" alt=""><img class="hole-base" src="assets/images/hole.webp" alt=""></button>
+        </div>
+
+        <img id="paw" class="paw" src="assets/images/hodl-paw.webp" alt="" aria-hidden="true">
+        <div id="floatText" class="float-text" aria-hidden="true"></div>
+
+        <div id="startPanel" class="overlay-panel is-visible">
+          <div class="panel-card start-card">
+            <div class="coin-mark" aria-hidden="true">₿</div>
+            <figure class="start-hero" aria-hidden="true">
+              <img src="assets/images/hodlwhite-start.webp" alt="">
+            </figure>
+            <h1>SAT SLAP</h1>
+            <p class="lead">ช่วย HODL White ตะปบ <strong>FIAT Sheep หน้าดำ</strong> ให้ทันใน 60 วินาที</p>
+            <div class="rules">
+              <span>🐑 หน้าดำ <strong>+100 sats</strong></span>
+              <span>🐑 หน้าขาว <strong>−100 sats</strong></span>
+            </div>
+            <form id="startForm" novalidate>
+              <label for="playerName">ชื่อผู้เล่น</label>
+              <input id="playerName" name="playerName" type="text" maxlength="20" autocomplete="nickname" placeholder="เช่น HereTong" required>
+              <p id="nameError" class="form-error" role="alert"></p>
+              <button class="primary-btn" type="submit">START — 60 SEC</button>
+            </form>
+            <p class="tip">เล่นด้วยการแตะบนมือถือ/แท็บเล็ต หรือคลิกเมาส์บนคอม</p>
+          </div>
+        </div>
+
+        <div id="countdownPanel" class="countdown" aria-live="assertive" aria-hidden="true"><span id="countdownText">3</span></div>
+
+        <div id="resultPanel" class="overlay-panel result-panel" aria-hidden="true">
+          <div class="panel-card result-card">
+            <p class="eyebrow">60 SECOND STACK</p>
+            <h2 id="resultName">PLAYER</h2>
+            <div class="result-score"><span id="resultScore">0</span><small>SATS</small></div>
+            <p id="resultMessage" class="result-message">HODL WHITE APPROVES.</p>
+            <div class="result-meta"><span>SAT SLAP</span><span id="resultDate"></span></div>
+            <p class="capture-note">📸 แคปหน้าจอนี้ไว้ท้าคนอื่นได้เลย</p>
+            <div class="donate-box">
+              <span class="donate-label">DONATE ⚡</span>
+              <strong id="donateAddress">donate@zapm.uk</strong>
+              <div class="donate-actions">
+                <a id="openWallet" class="secondary-btn" href="lightning:donate@zapm.uk">OPEN WALLET</a>
+                <button id="copyDonate" class="secondary-btn" type="button">COPY</button>
+              </div>
+              <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+            </div>
+            <button id="playAgain" class="primary-btn" type="button">PLAY AGAIN</button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer-note">Prototype v1.5 · ไม่มีการเก็บชื่อหรือคะแนนขึ้นเซิร์ฟเวอร์</footer>
+    </section>
+  </main>
+
+  <audio id="bgMusic" src="assets/audio/background.mp3" preload="auto" loop></audio>
+  <audio id="sfxFinish" src="assets/audio/victory-fanfare.wav" preload="auto"></audio>
+  <audio id="sfxBaa" preload="auto">
+    <source src="https://bigsoundbank.com/UPLOAD/mp3/2349.mp3" type="audio/mpeg">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/2/28/Sheep_bleat.ogg" type="audio/ogg">
+  </audio>
+
+  <script src="config.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
