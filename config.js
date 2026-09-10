@@ -1,0 +1,14 @@
+window.SATSLAP_CONFIG = {
+  gameTitle: 'SAT SLAP',
+  subtitle: 'HODL White vs. FIAT Sheep',
+  durationSeconds: 60,
+  blackSheepReward: 100,
+  whiteSheepPenalty: 100,
+  blackSheepProbability: 0.68,
+  startPopMs: 1050,
+  endPopMs: 620,
+  backgroundMusicVolume: 0.22,
+  sfxVolume: 0.92,
+  maxNameLength: 20,
+  donateAddress: 'donate@zapm.uk'
+};
