@@ -1,0 +1,17 @@
+{
+  "name": "SAT SLAP",
+  "short_name": "SAT SLAP",
+  "description": "HODL White vs. FIAT Sheep — 60-second Bitcoin arcade game",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#f7931a",
+  "icons": [
+    {
+      "src": "/assets/social/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
