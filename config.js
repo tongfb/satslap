@@ -12,3 +12,10 @@ window.SATSLAP_CONFIG = {
   maxNameLength: 20,
   donateAddress: 'donate@zapm.uk'
 };
+
+(() => {
+  const script = document.createElement('script');
+  script.src = 'halloffame.js';
+  script.defer = true;
+  document.head.appendChild(script);
+})();
