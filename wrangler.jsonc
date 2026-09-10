@@ -2,7 +2,14 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "satslap",
   "compatibility_date": "2026-09-10",
+  "workers_dev": true,
   "assets": {
     "directory": "."
-  }
+  },
+  "routes": [
+    {
+      "pattern": "satslap.zapm.uk",
+      "custom_domain": true
+    }
+  ]
 }
